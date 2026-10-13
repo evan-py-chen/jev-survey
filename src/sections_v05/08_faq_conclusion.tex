@@ -1,0 +1,25 @@
+\section{Frequently Asked Questions}
+\label{sec:faq}
+
+\noindent\textbf{What is Jev?} Jev is TypeSafe AI's hosted typed decision model, which TypeSafe calls a System One model. It takes a state and typed questions defined at call time, and it returns a probability distribution over each question's closed answer set instead of text (Section~\ref{sec:jev}).
+
+\noindent\textbf{Are there open-source alternatives to Jev?} Yes. Examples come from three families: 1) Laya, a trained encoder; 2) Kev, Nimble and trained Decider variants, which are fine-tuned decoders; and 3) SemIf, AnyJev and stock-weight Decider variants, which read typed decisions from frozen open models (Table~\ref{tab:implementations}).
+
+\noindent\textbf{Is Jev cheaper and faster than an LLM?} Reported savings depend strongly on the baseline and on pricing assumptions. The largest reductions are against LLM judges and annotators, while comparisons with cheap LLMs show much smaller gaps (Section~\ref{sec:evidence}). Part of the speed-up comes from not generating text. In one agent study, a cheap generative cascade cost less than a typed cascade.
+
+\noindent\textbf{How accurate and well calibrated is Jev?} One large evaluation reports 95--99\% accuracy on standard classification and multiple-choice benchmarks, and Jev trails frontier LLMs on hard tasks. Its pooled calibration error is low, but 8 of the 22 datasets in the same evaluation exceed an ECE of 0.05 (Section~\ref{sec:evidence}).
+
+\noindent\textbf{Is Jev a router?} Not in the narrow sense of a model trained to choose among a fixed pool. It shares routing's goal of a decision component that adapts without retraining, and a caller can pose model selection to it as a typed question. In the router studies reviewed here, knowledge about the candidate models came from outcome data rather than from Jev itself. In two of the three studies that ran Jev as a router, routers without Jev's answers matched it on held-out data, in one study only in a pre-registered replication on fresh items. The third reports higher accuracy than the best single model but did not establish monetary savings (Section~\ref{sec:routing}).
+
+\noindent\textbf{Does type safety mean the answers are correct?} No. Type safety guarantees that every answer lies in the answer set. Independent studies record valid answers that are wrong at high confidence (Section~\ref{sec:evidence}).
+
+\noindent\textbf{Do typed decision models remove the need for labeled data?} They remove the need for labels to specify a new decision. Testing that decision, and certifying an acceptance rule for a risk target, still need labeled evidence, which can sometimes be reused (Section~\ref{sec:adaptation}).
+
+\noindent\textbf{Can Jev serve as a security gate?} Only as one layer among several. Added context can move its decisions, and it can miss attacks that carry no explicit instruction, as can the open models tested with it (Section~\ref{sec:evidence}). The design principles we recommend are to keep fetched content out of the gate, use allow, review and block outcomes, fix option names and order, and pin the model version (Section~\ref{sec:risks}).
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Typed decision models bring classification, scoring and Boolean judgments into one interface whose questions are specified at call time. For new decisions, they address the goal that routing surveys state: a decision component that adapts without retraining. The routing approaches reviewed here still need candidate-specific evidence for new models, and risk targets still need labeled evidence. Independent studies report valid outputs and large savings against LLM judges, although a cheap generative cascade can be cheaper inside an agent loop. They also show accuracy gaps on hard tasks, calibration that varies by workload, and decisions that added context can move. We recommend three steps: 1) compare a typed model with the alternatives in Table~\ref{tab:starting}, including a label-probability readout on an open model and a cheap generative cascade; 2) measure both under the acceptance rule the deployment will use, on labeled data from its own traffic; and 3) record which labels, profiles and warmup batches can be reused when models, questions or constraints change.
+
+\noindent\textbf{Limitations.} Most work specific to Jev is recent and not peer reviewed, and results can change between versions of a paper or of the model. Jev's weights and training data are closed, so black-box measurements cannot separate model behavior from provider-side processing. The JevBench comparisons use one results snapshot without reported uncertainty estimates. Our search covered public English-language sources and may have missed evaluations that have not appeared as papers or documented repositories.

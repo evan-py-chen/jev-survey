@@ -1,0 +1,26 @@
+\begin{table*}[!t]
+\centering
+\caption{What a change on each axis requires, by family. \axisM: a new candidate model; \axisD: a new decision; \axisC: a new deployment constraint, either an offload ratio or a risk target.}
+\label{tab:requirements}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hspace{0pt}}p{3.4cm}>{\raggedright\arraybackslash\hspace{0pt}}X>{\raggedright\arraybackslash\hspace{0pt}}X>{\raggedright\arraybackslash\hspace{0pt}}X@{}}
+\toprule
+\tblhead \thd{Family (examples)} & \thd{\axisM{} New model} & \thd{\axisD{} New decision} & \thd{\axisC{} New constraint} \\
+\midrule
+\tblgroup{4}{Routers and gates}
+Profile routers (UniRoute~\cite{jitkrittum2025universal}; kNN~\cite{li2025rethinking}) & A profile built from the model's graded outputs on a reference set & Not supported: one fixed routing question & A cost weight applied to predicted per-model errors; labeled evidence for a risk target \\
+Route-as-text routers (Arch-Router~\cite{tran2025arch}) & An edit to the human-maintained policy-to-model table & A new route description; routes only & Not addressed \\
+Agreement pivots (Yue et~al.~\cite{yue2024large}; CARGO~\cite{chen2026routing}) & A capable cheap model with comparable answers, and a retuned agreement rule & One fixed accept-or-escalate question & An agreement threshold or probabilistic offloading pivot (CARGO calibrates the latter on an unlabeled warmup batch per offload ratio); labeled evidence for a risk target \\
+\midrule
+\tblgroup{4}{Decisions specified in the input}
+Zero-shot classifiers (NLI~\cite{yin2019benchmarking}; GLiClass~\cite{stepanov2025gliclass}) & Not used for model selection & New label strings & A threshold on label scores; labeled evidence for a risk target \\
+Policy-conditioned guards (Llama Guard~\cite{inan2023llama}; DynaGuard~\cite{hoover2025dynaguard}) & Not used for model selection & New policy text; Boolean verdicts, plus the violated categories in Llama Guard & A threshold on the probability of an unsafe or failing verdict; labeled evidence for a risk target \\
+Rubric judges (Prometheus~2~\cite{kim2024prometheus2}; G-Eval~\cite{liu2023geval}) & Not a router; can grade a new model's outputs to build its profile & A new rubric; scores and pairwise preferences & A threshold on scores; labeled evidence for a risk target \\
+\midrule
+\tblgroup{4}{Typed decision models}
+Jev and open implementations (Table~\ref{tab:implementations}) & Candidate-specific evidence, such as a profile built from graded outputs, supplied in the state or used by the surrounding router & New question text, and labeled examples to test it & Warmup scores for an offload ratio; a validated acceptance rule with labeled evidence for a risk target \\
+\bottomrule
+\end{tabularx}
+\end{table*}

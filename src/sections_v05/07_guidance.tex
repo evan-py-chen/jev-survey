@@ -1,0 +1,30 @@
+\section{Practical Guidance and Open Questions}
+\label{sec:guidance}
+
+\subsection{Where to Start}
+\input{tables_v05/tab_starting}
+
+Table~\ref{tab:starting} lists starting comparisons by deployment need. In each case, adoption depends on quality under the acceptance rule the deployment will use, and on total cost, including adaptation, serving and fallback.
+
+\noindent\textbf{Include a readout on an open model.} Tang and Zheng find no independent accuracy advantage for typed readout over label-probability readouts on comparable backbones~\cite{tang2026typed}. This does not mean that a team's own open model matches Jev. In one large evaluation, Jev scored higher than next-token readouts of two open models on most datasets (Section~\ref{sec:evidence}). We therefore recommend such a readout as a baseline to measure, not as a default. SemIf and AnyJev are open examples, and three of us develop AnyJev.
+
+\noindent\textbf{Check that the fallback corrects errors.} Escalation improves accuracy when the fallback corrects enough deferred errors to offset the errors it introduces. Rao et~al.\ find that on Jev's most confident errors, about 96\% of LLM-judge verdicts repeat the wrong answer. As a result, no cascade improves on the best single judge by more than 2.7 points in their paper's second version, even with oracle thresholds~\cite{rao2026jev}. In contrast, JEV-as-a-Judge accepts Jev's confident verdicts and escalates the rest to a reasoning judge with a threshold fixed in advance. On 1{,}610 held-out pairs, this cascade is 0.9 points more accurate than GPT-6 at 41\% of its fee, although its confidence routing weakens on style-adversarial pairs~\cite{li2026jev}. Ibrahim et~al.\ find that escalating low-confidence annotations to an LLM matches the LLM alone at a quarter to half of its cost~\cite{ibrahim2026evaluating}. A typed first stage should also be compared with a cheap generative cascade, which was cheaper on $\tau^2$-bench in the one agent study that tested both (Section~\ref{sec:evidence}).
+
+\subsection{A Pilot in Five Steps}
+\label{sec:pilot}
+
+We recommend five steps before adoption: 1) pin a model version; 2) label a sample of the deployment's own traffic for each question, and split it into a tuning half and a test half; 3) run the typed model and the alternatives in Table~\ref{tab:starting} on identical requests, with the same batching and latency boundary; 4) set the acceptance rule on the tuning half, and report accuracy, automation coverage and error rate on the test half, per relevant group; and 5) with the acceptance rule fixed, repeat the test measurements after reordering or renaming options, negating a Boolean question, and appending an unrelated opinion to the state. The number of test labels follows from the risk target. With the acceptance rule fixed before testing, zero errors among $n$ independent accepted test decisions give an approximate one-sided 95\% upper confidence bound of $3/n$ on the error rate~\cite{hanley1983nothing}. About 300 such decisions are needed to place this bound near 1\%. This count covers accepted test decisions, not the whole labeling budget, and a pooled bound does not hold simultaneously for every group. Steps 2 to 5 should be repeated after any change of model version, question or traffic.
+
+\subsection{What to Report}
+
+Building on Tang and Zheng's checklist~\cite{tang2026typed} and our adaptation-cost account, we ask evaluations of typed decision models to report six items: 1) the model version, not only its alias; 2) whether reference labels are gold labels or a teacher model's labels, since agreement with a teacher is not accuracy; 3) calibration per workload and per relevant group, not only pooled; 4) the latency boundary, and whether the baseline batches its requests; 5) matched baselines, including a small fine-tuned encoder or SetFit at the same label budget~\cite{tunstall2022efficient}, a label-probability readout on an open model, and a cheap generative cascade; and 6) newly acquired labels separately from reused ones.
+
+\subsection{Open Questions}
+\label{sec:open}
+
+A new question can be specified without retraining, but its acceptance rule still needs an evidence base. For a new caller-written question, under what assumptions can labeled evidence from earlier questions support a useful acceptance rule, and how many new labels are needed when it cannot? Conformal methods, including weighted variants for covariate shift, answer parts of this question under their own assumptions~\cite{angelopoulos2021gentle}. We propose two studies that would make progress on it:
+\begin{enumerate}
+\item \textbf{Value beyond profiles.} On one replayable routing benchmark, such as LLMRouterBench~\cite{li2026llmrouterbench}, compare a tuned kNN router, a text-feature router and a router on typed features. Give all three the same model profiles, and include the cost of calls to the decision model. Running the candidates under both real and anonymized names separates prior knowledge of model names from use of the profiles.
+\item \textbf{Transfer across questions.} Hold out whole families of questions, and compare local calibration with reuse of labeled evidence from related questions at stated label budgets. Report automation coverage at a fixed risk target on disjoint test data.
+\end{enumerate}
+The first study would test whether typed features add predictive value beyond the profiles under matched conditions.

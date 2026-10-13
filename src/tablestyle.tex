@@ -1,0 +1,44 @@
+
+\definecolor{axisMc}{HTML}{2A78D6}   %
+\definecolor{axisDc}{HTML}{EB6834}   %
+\definecolor{axisCc}{HTML}{1BAF7A}   %
+\definecolor{seriesTypedc}{HTML}{4A3AA7} %
+\definecolor{seriesLLMc}{HTML}{E87BA4}   %
+\definecolor{goodc}{HTML}{0CA30C}
+\definecolor{critc}{HTML}{D03B3B}
+\definecolor{inkc}{HTML}{0B0B0B}
+\definecolor{mutedc}{HTML}{52514E}
+\colorlet{tblheadc}{mutedc!14}       %
+\colorlet{tblgroupc}{mutedc!7}       %
+
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\setlength{\extrarowheight}{1.6pt}
+
+\renewcommand{\axisM}{\textcolor{axisMc}{\textsf{\textbf{M}}}}
+\renewcommand{\axisD}{\textcolor{axisDc}{\textsf{\textbf{D}}}}
+\renewcommand{\axisC}{\textcolor{axisCc}{\textsf{\textbf{C}}}}
+
+\newcommand{\cyes}{\textcolor{inkc}{\textnormal{\CIRCLE}}}
+\newcommand{\cpart}{\textcolor{inkc}{\textnormal{\LEFTcircle}}}
+\newcommand{\cno}{\textcolor{mutedc}{\textnormal{\Circle}}}
+\newcommand{\cna}{\textcolor{mutedc}{--}}
+
+\newcommand{\vok}{\textcolor{goodc}{\ding{51}}}        %
+\newcommand{\vbad}{\textcolor{critc}{\ding{55}}}       %
+\newcommand{\vopen}{\textcolor{mutedc}{\textbf{?}}}     %
+
+\newcommand{\tblhead}{\rowcolor{tblheadc}}
+\newcommand{\tblgroup}[2]{\rowcolor{tblgroupc}\multicolumn{#1}{@{}l}{\hspace{2pt}\textsc{#2}}\\}
+\newcommand{\thd}[1]{\textbf{#1}}
+
+\pdfstringdefDisableCommands{%
+  \def\axisM{M}\def\axisD{D}\def\axisC{C}}
+
+\providecommand{\glyphLab}{\ensuremath{\bullet}}          %
+\providecommand{\glyphProf}{\ensuremath{\blacklozenge}}   %
+\providecommand{\glyphWarm}{\ensuremath{\blacktriangle}}  %
+\providecommand{\glyphSpec}{\ensuremath{\star}}           %
+\providecommand{\glyphAll}{\ensuremath{\boxplus}}         %
+
+\newcommand{\dmp}{\texttt{decision-\allowbreak{}model-\allowbreak{}preview}}

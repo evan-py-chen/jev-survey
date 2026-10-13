@@ -1,0 +1,54 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\scriptsize, line join=round]
+  \def\R{2.05}
+  \colorlet{seriesTyped}{seriesTypedc}
+  \colorlet{seriesLLM}{seriesLLMc}
+  \draw[mutedc!25, line width=0.3pt] (0,0.25*\R) -- (0.25*\R,0) -- (0,-0.25*\R) -- (-0.25*\R,0) -- cycle;
+  \draw[mutedc!25, line width=0.3pt] (0,0.50*\R) -- (0.50*\R,0) -- (0,-0.50*\R) -- (-0.50*\R,0) -- cycle;
+  \draw[mutedc!25, line width=0.3pt] (0,0.75*\R) -- (0.75*\R,0) -- (0,-0.75*\R) -- (-0.75*\R,0) -- cycle;
+  \draw[mutedc!45, line width=0.3pt] (0,1.00*\R) -- (1.00*\R,0) -- (0,-1.00*\R) -- (-1.00*\R,0) -- cycle;
+  \node[font=\tiny, text=mutedc, fill=white, inner sep=0.6pt] at (-45:0.50*\R*0.7071) {50};
+  \node[font=\tiny, text=mutedc, fill=white, inner sep=0.6pt] at (-45:1.00*\R*0.7071) {100};
+  \foreach \a in {90,0,-90,180}{ \draw[mutedc!40, line width=0.3pt] (0,0) -- (\a:\R); }
+  \node[anchor=south, align=center, font=\footnotesize] at (90:{\R+0.12}) {Intelligence};
+  \node[anchor=west, align=center, font=\footnotesize] at (0:{\R+0.12}) {Calibration};
+  \node[anchor=north, align=center, font=\footnotesize] at (-90:{\R+0.12}) {Speed};
+  \node[anchor=east, align=center, font=\footnotesize] at (-180:{\R+0.12}) {Cost\\(higher = cheaper)};
+  \draw[seriesTyped, line width=1.1pt, fill=seriesTyped, fill opacity=0.10] (90:0.5306*\R) -- (0:0.7634*\R) -- (-90:0.8327*\R) -- (-180:0.5197*\R) -- cycle;
+  \fill[seriesTyped] (90:0.5306*\R) circle (1.5pt);
+  \fill[seriesTyped] (0:0.7634*\R) circle (1.5pt);
+  \fill[seriesTyped] (-90:0.8327*\R) circle (1.5pt);
+  \fill[seriesTyped] (-180:0.5197*\R) circle (1.5pt);
+  \draw[seriesLLM, line width=0.9pt, densely dotted] (90:0.9578*\R) -- (0:0.9198*\R) -- (-90:0.7366*\R) -- (-180:0.3689*\R) -- cycle;
+  \fill[seriesLLM] ([shift={(-1.3pt,-1.3pt)}]90:0.9578*\R) rectangle ++(2.6pt,2.6pt);
+  \fill[seriesLLM] ([shift={(-1.3pt,-1.3pt)}]0:0.9198*\R) rectangle ++(2.6pt,2.6pt);
+  \fill[seriesLLM] ([shift={(-1.3pt,-1.3pt)}]-90:0.7366*\R) rectangle ++(2.6pt,2.6pt);
+  \fill[seriesLLM] ([shift={(-1.3pt,-1.3pt)}]-180:0.3689*\R) rectangle ++(2.6pt,2.6pt);
+  \draw[seriesLLM!55, line width=0.9pt, dash pattern=on 3pt off 1.5pt] (90:0.5447*\R) -- (0:0.5929*\R) -- (-90:0.8179*\R) -- (-180:0.2736*\R) -- cycle;
+  \draw[seriesLLM!55, fill=white, line width=0.7pt] ([shift={(-1.3pt,-1.3pt)}]90:0.5447*\R) rectangle ++(2.6pt,2.6pt);
+  \draw[seriesLLM!55, fill=white, line width=0.7pt] ([shift={(-1.3pt,-1.3pt)}]0:0.5929*\R) rectangle ++(2.6pt,2.6pt);
+  \draw[seriesLLM!55, fill=white, line width=0.7pt] ([shift={(-1.3pt,-1.3pt)}]-90:0.8179*\R) rectangle ++(2.6pt,2.6pt);
+  \draw[seriesLLM!55, fill=white, line width=0.7pt] ([shift={(-1.3pt,-1.3pt)}]-180:0.2736*\R) rectangle ++(2.6pt,2.6pt);
+  \draw[mutedc, line width=0.9pt, dashed] (90:0.3180*\R) -- (0:0.5706*\R) -- (-90:0.7990*\R) -- (-180:0.7534*\R) -- cycle;
+  \fill[mutedc] ([shift={(-1.5pt,-1.3pt)}]90:0.3180*\R) -- ++(3pt,0) -- ++(-1.5pt,2.8pt) -- cycle;
+  \fill[mutedc] ([shift={(-1.5pt,-1.3pt)}]0:0.5706*\R) -- ++(3pt,0) -- ++(-1.5pt,2.8pt) -- cycle;
+  \fill[mutedc] ([shift={(-1.5pt,-1.3pt)}]-90:0.7990*\R) -- ++(3pt,0) -- ++(-1.5pt,2.8pt) -- cycle;
+  \fill[mutedc] ([shift={(-1.5pt,-1.3pt)}]-180:0.7534*\R) -- ++(3pt,0) -- ++(-1.5pt,2.8pt) -- cycle;
+  \tikzset{legsample/.style={inner sep=0pt, minimum width=0.5cm, minimum height=2.8pt}}
+  \node[legsample, anchor=west] (L0) at (-3.3,{-\R-0.75}) {};
+  \draw[seriesTyped, line width=1.1pt] (L0.west) -- (L0.east); \fill[seriesTyped] (L0.center) circle (1.5pt);
+  \node[right=2pt of L0, inner sep=1pt] (T0) {Jev 1.13.0};
+  \node[legsample, right=10pt of T0] (L1) {};
+  \draw[seriesLLM, line width=0.9pt, densely dotted] (L1.west) -- (L1.east); \fill[seriesLLM] ([shift={(-1.3pt,-1.3pt)}]L1.center) rectangle ++(2.6pt,2.6pt);
+  \node[right=2pt of L1, inner sep=1pt] (T1) {GPT-6 Luna, low effort};
+  \node[legsample, anchor=west] (L2) at (-3.3,{-\R-1.12}) {};
+  \draw[seriesLLM!55, line width=0.9pt, dash pattern=on 3pt off 1.5pt] (L2.west) -- (L2.east); \draw[seriesLLM!55, fill=white, line width=0.7pt] ([shift={(-1.3pt,-1.3pt)}]L2.center) rectangle ++(2.6pt,2.6pt);
+  \node[right=2pt of L2, inner sep=1pt] (T2) {Gemini 3.1 Flash-Lite};
+  \node[legsample, right=10pt of T2] (L3) {};
+  \draw[mutedc, line width=0.9pt, dashed] (L3.west) -- (L3.east); \fill[mutedc] ([shift={(-1.5pt,-1.3pt)}]L3.center) -- ++(3pt,0) -- ++(-1.5pt,2.8pt) -- cycle;
+  \node[right=2pt of L3, inner sep=1pt] (T3) {OpenDecision};
+\end{tikzpicture}
+\caption{Scores of four systems on JevBench v1.4.2.2~\cite{jevbench2026v1422}, from three classes: a typed decision model (Jev 1.13.0), two prompted LLMs (GPT-6 Luna at low reasoning effort and Gemini 3.1 Flash-Lite) and a zero-shot ModernBERT classifier (OpenDecision). Each axis is the benchmark's 0--100 score on the same decisions. Intelligence is chance-corrected accuracy across the benchmark's tiers, calibration measures how well stated probabilities match outcomes, speed maps latency to a score (100 at 0.1\,s, 80 at 1\,s), and cost maps the price per 1{,}000 decisions to a score, so that higher means cheaper. OpenDecision's speed and cost are the benchmark's estimates rather than measurements. The results file reports no uncertainty estimates. On this snapshot, no system is best on every axis. Against Gemini 3.1 Flash-Lite, the typed decision model scores 1.4 points lower on intelligence and higher on the other three axes. The speed scale is logarithmic: Jev's median latency is 0.65\,s, against 1.44\,s for GPT-6 Luna at low effort. We chose one system per class to compare the classes, not to rank systems. Three open-weight typed models rank above Jev on the benchmark's composite score.}
+\label{fig:radar}
+\end{figure}

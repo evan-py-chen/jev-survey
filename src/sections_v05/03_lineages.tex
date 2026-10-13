@@ -1,0 +1,39 @@
+\section{Connections to Earlier Research}
+\label{sec:lineages}
+
+We connect typed decision models to two lines of work: routing frames the problem of adapting a decision component to change, while classification and readout provide mechanisms for answering questions specified in the input. Routing is also only one of their applications: Tang and Zheng identify one routing application among the 28 papers they audit~\cite{tang2026typed}. This section examines these two connections to earlier research.
+
+\subsection{Routing and Changing System Requirements}
+\label{sec:routing}
+
+Classical routers allocate queries among models, including through cascades~\cite{chen2023frugalgpt,ong2024routellm}. Each router answers one question fixed at design time, usually over a pool of models fixed at training time. Routing surveys list adding candidates without retraining as an open goal~\cite{varangotreille2025doing} and place it within the broader challenge of retraining-free transfer~\cite{moslem2026dynamic}. Recent routers relax the fixed design in three ways:
+\begin{enumerate}
+\item \textbf{Profile routers} separate model information from shared router parameters. A new model enters through a profile, such as a per-cluster error vector in UniRoute~\cite{jitkrittum2025universal} or neighbor accuracies in a tuned $k$-nearest-neighbor (kNN) router, which matches and often outperforms learned routers~\cite{li2025rethinking}. Building a profile still requires the new model's graded outputs on a reference set. Descriptor routers move part of the profile into text: GraphRouter initializes a new model from its description but still uses few-shot interaction data~\cite{feng2024graphrouter}, and Router-R1 reads descriptors of price, latency and example performance~\cite{zhang2025router}.
+\item \textbf{Route-as-text routers} read route descriptions at call time. Arch-Router receives route policies in its prompt and returns the chosen policy, while a human-maintained table maps policies to models~\cite{tran2025arch}. Its authors report that overlapping policy descriptions degrade routing.
+\item \textbf{Threshold control} meets a deployment constraint by moving a threshold on a score. RouteLLM varies its cost--quality trade-off this way~\cite{ong2024routellm}. Agreement pivots escalate a query to a stronger model when several answers from a cheap model disagree with one another. Yue et~al.\ measure agreement across chain-of-thought and program-of-thought answers~\cite{yue2024large}. CARGO measures it across equivalent system prompts and calibrates the pivot of a probabilistic offloading rule on an unlabeled warmup batch to meet a target \emph{offload ratio}, the share of queries sent to the stronger model~\cite{chen2026routing}.
+\end{enumerate}
+
+LLMRouterBench evaluates fixed pools, so it does not test new-model generality directly. On those pools, several recent routers do not reliably outperform a simple baseline, and the remaining gap to the oracle comes mainly from failures to recall the right model~\cite{li2026llmrouterbench}. UniRoute separately evaluates routing to models held out from router training, using profiles computed on a validation set~\cite{jitkrittum2025universal}.
+
+\noindent\textbf{Typed decision models as routers.} Three studies run Jev as an LLM router. In all three, the knowledge about candidate models comes from outcome data outside the decision model:
+\begin{enumerate}
+\item On a 13-model pool from LLMRouterBench, TokenTrim combines Jev's rating of query difficulty with nearest-neighbor accuracies of each candidate. Its ablation without Jev reaches the same quality--cost frontier, and the authors attribute the gain to the retrieved evidence~\cite{tokentrim2026jevrouting}.
+\item The jev-router study trains a router on Jev's answers to six typed questions. In a pre-registered replication on fresh items, routers without Jev features matched or beat it at two of three minimum required quality levels~\cite{rishirajfs2026jevrouter}.
+\item SeLMRoute trains a supervised performance model on Jev's answers to sixteen typed questions. In grouped out-of-fold evaluation on LLMRouterBench, it reports 72.64\% accuracy against 69.23\% for the strongest fixed candidate, without establishing monetary savings~\cite{perifanis2026selmroute}.
+\end{enumerate}
+In these studies, typed questions provide features about the query, while candidate performance is estimated from outcome data. Adding a candidate therefore requires new candidate-specific evidence, supplied in the state or used by the surrounding router.
+
+\subsection{Methods for Producing Typed Decisions}
+\label{sec:mechanisms}
+
+The open implementations build on four families of methods in which a fixed model answers a decision specified in its input.
+
+\noindent\textbf{Label-token readout.} A language model can answer a closed question by reading the probability it assigns to each candidate answer instead of generating one. Kadavath et~al.\ introduced P(True), the probability a model assigns to ``True'' when asked whether a proposed answer is correct~\cite{kadavath2022language}. Such readouts carry two documented biases: 1) a prior toward labels that are frequent or recent in the prompt or common in pretraining data, which contextual calibration and Batch Calibration reduce~\cite{zhao2021calibrate,zhou2024batch}; and 2) a preference for particular option identifiers or positions, which PriDe estimates and removes without labels~\cite{zheng2024large}. For a \texttt{choice} question, the second bias means that reordering the options can change the decision, which violates invariance (P3).
+
+\noindent\textbf{Zero-shot label-as-input classifiers.} Yin et~al.\ cast zero-shot text classification as entailment, scoring each candidate label as a hypothesis about the text~\cite{yin2019benchmarking}. GLiClass encodes all labels together with the text in one pass~\cite{stepanov2025gliclass}. The encoder implementations in Table~\ref{tab:implementations} build on this approach.
+
+\noindent\textbf{Policy-conditioned guards.} These safety models follow rules supplied by the caller. Llama Guard places adjustable taxonomy categories in its prompt and uses the probability of the token \texttt{unsafe} as its score~\cite{inan2023llama}. DynaGuard takes free-form rules and offers a fast mode that emits a pass or fail verdict directly~\cite{hoover2025dynaguard}. Guards answer one Boolean question against a policy, sometimes adding the violated categories or an explanation. The fine-tuned decoder implementations generalize these single-verdict guards to arbitrary typed questions.
+
+\noindent\textbf{Rubric judges.} Prometheus~2 evaluates responses under user-defined criteria~\cite{kim2024prometheus2}. G-Eval computes a score as the probability-weighted sum over score tokens~\cite{liu2023geval}, which is the readout of the \texttt{score} type. Judge reliability is usually measured as agreement with human ratings rather than as the calibration of a probability~\cite{gu2024survey}.
+
+\noindent\textbf{What the families share.} Across these families, the caller specifies labels, policies or rubrics in the input. Typed decision interfaces expose such decisions through \texttt{choice}, \texttt{score} and Boolean questions, while implementations differ in their training and readout mechanisms. Tang and Zheng find no demonstrated accuracy advantage from typed readout alone over comparable label-probability readouts~\cite{tang2026typed}.

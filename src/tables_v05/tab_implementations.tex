@@ -1,0 +1,28 @@
+\begin{table}[!t]
+\centering
+\caption{Implementations of the typed decision interface, grouped by mechanism family. ``User labels'' counts the labeled examples a user supplies per new question to obtain probabilities; developer training data are excluded. Every row still needs labeled evidence to set an acceptance rule for a risk target (Section~\ref{sec:adaptation}). ``Passes'' counts model passes for one question. L0, L1 and L2 are AnyJev's zero-label, temperature-fitted and closed-form-head levels, with label counts as stated by its developers. $K$: number of options.}
+\label{tab:implementations}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash\hspace{0pt}}p{1.35cm}>{\raggedright\arraybackslash\hspace{0pt}}X>{\raggedright\arraybackslash\hspace{0pt}}p{1.3cm}>{\raggedright\arraybackslash\hspace{0pt}}p{1.75cm}@{}}
+\toprule
+\tblhead \thd{System} & \thd{Mechanism and training} & \thd{User labels} & \thd{Passes} \\
+\midrule
+\tblgroup{4}{Hosted, closed weights}
+Jev 1.13~\cite{typesafe2026docs} & Vendor-trained with RLCD; unpublished & 0 & One API call, which several questions can share \\
+\midrule
+\tblgroup{4}{Open weights: trained encoder heads}
+Laya~\cite{convai2026laya} & Fine-tuned ModernBERT or mmBERT & 0; developers advise task fine-tuning and local temperature fitting & One encoder forward pass \\
+\midrule
+\tblgroup{4}{Open weights: fine-tuned decoders}
+Kev~\cite{palmer2026kev} & Pointer head on Qwen3.5 or Qwen3.8; LoRA, full fine-tuning at 27B & 0 & One prefill \\
+Nimble~\cite{bespoke2026nimble} & LoRA on Qwen3.5-9B & 0 & One prefill \\
+Decider~\cite{mapika2026decider} & Fine-tuned Qwen3.5; also a Gemma-4 LoRA and stock-model readout variants & 0 & One prefill \\
+\midrule
+\tblgroup{4}{Open weights: readout from frozen models}
+SemIf~\cite{lee2026semif} & Logit readout from frozen checkpoints & 0 & One prefill \\
+AnyJev~\cite{nokia2026anyjev} & Debiased readout (L0); temperature (L1); closed-form head, no gradient training (L2) & 0 (L0); 100--500 (L1); 100--300 (L2) & Up to $K$ prompts sharing the state prefix (L0, L1); one partial forward pass (L2) \\
+\bottomrule
+\end{tabularx}
+\end{table}

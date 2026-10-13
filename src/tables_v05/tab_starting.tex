@@ -1,0 +1,32 @@
+\begin{table*}[!t]
+\centering
+\caption{Suggested starting comparisons for choosing a decision model. Each row gives alternatives to test and a criterion for adopting a typed decision model, measured under matched data and serving conditions with the pilot in Section~\ref{sec:pilot}.}
+\label{tab:starting}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\tblhead \thd{Deployment need} & \thd{Starting alternatives} & \thd{Adopt a typed model if} \\
+\midrule
+Stable repeated task; labels available
+  & Small fine-tuned encoder or SetFit~\cite{tunstall2022efficient}, at a matched label budget
+  & It reaches the required error rate at lower total cost or with less adaptation work \\
+Changing short label sets; few labels
+  & NLI~\cite{yin2019benchmarking}, GLiClass~\cite{stepanov2025gliclass}, and a label-probability readout on an open model, with or without debiasing
+  & It gives better accuracy at the same latency, after counting the passes that many options and debiasing need \\
+Many judgments over one state
+  & One batched LLM call with structured output
+  & Its savings remain when both sides batch, cache and measure latency the same way \\
+Policy screening
+  & A guard trained on a fixed taxonomy, such as Llama Guard~\cite{inan2023llama}, and a guard for user-written rules, such as DynaGuard~\cite{hoover2025dynaguard}
+  & Its miss rate meets the target on held-out local data, with uncertainty assessed in each prespecified risk group, and it provides higher automation coverage \\
+Changing LLM pool
+  & Tuned kNN~\cite{li2025rethinking} or UniRoute~\cite{jitkrittum2025universal}, given the same outcome data on the candidates
+  & It improves quality or cost beyond what the profiles alone provide, after charging its own calls \\
+Multi-step or specialist judgment
+  & Fast generative model, reasoning reference and a cheap generative cascade
+  & It is accurate enough on the hard cases, or its fallback corrects the deferred errors at acceptable total cost \\
+\bottomrule
+\end{tabularx}
+\end{table*}
