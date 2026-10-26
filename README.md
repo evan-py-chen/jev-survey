@@ -3,7 +3,9 @@
 Evan Chen, Jiamu Zhang, Tianze Yang, Kelly Wan, Liangjie Hong, Liang Wu
 *Nokia, Sunnyvale, CA, USA*
 
-Preprint, October 2026 (version 0.5)
+Accepted to ACM SIGKDD Explorations, 2026 (authors' version)
+
+**News, October 2026:** ACM SIGKDD Explorations accepted this survey. This repository now has the accepted version.
 
 **[PDF](https://evan-py-chen.github.io/jev-survey/jev-survey.pdf)** · **[Paper page](https://evan-py-chen.github.io/jev-survey/)**
 
@@ -16,22 +18,22 @@ Many decisions in LLM systems do not need generated text. They only need a choic
 ## Citation
 
 ```bibtex
-@misc{chen2026jevsurvey,
-  title        = {{A Survey on Jev}: Prior Research, Adaptation Costs, and Evidence of {System One} Models},
-  author       = {Chen, Evan and Zhang, Jiamu and Yang, Tianze and Wan, Kelly and Hong, Liangjie and Wu, Liang},
-  year         = {2026},
-  month        = oct,
-  howpublished = {\url{https://evan-py-chen.github.io/jev-survey/}},
-  note         = {Preprint, version 0.5}
+@article{chen2026jevsurvey,
+  title   = {{A Survey on Jev}: Prior Research, Adaptation Costs, and Evidence of {System One} Models},
+  author  = {Chen, Evan and Zhang, Jiamu and Yang, Tianze and Wan, Kelly and Hong, Liangjie and Wu, Liang},
+  journal = {ACM SIGKDD Explorations Newsletter},
+  year    = {2026},
+  note    = {Accepted, to appear},
+  url     = {https://evan-py-chen.github.io/jev-survey/}
 }
 ```
 
 ## Building from source
 
-The LaTeX source is in [`src/`](src/) (IEEEtran, two-column). With [Tectonic](https://tectonic-typesetting.github.io/):
+The LaTeX source is in [`src/`](src/). It uses the SIGKDD Explorations template (`sigkddExp.cls`, two columns). With [Tectonic](https://tectonic-typesetting.github.io/):
 
 ```bash
-cd src && tectonic -X compile main_v05.tex
+cd src && tectonic -X compile main_kdd.tex
 ```
 
-or with TeX Live: `pdflatex main_v05 && bibtex main_v05 && pdflatex main_v05 && pdflatex main_v05`.
+or with TeX Live: `pdflatex main_kdd && bibtex main_kdd && pdflatex main_kdd && pdflatex main_kdd`. The folder also has `main_kdd.bbl`, so a build without BibTeX also works.

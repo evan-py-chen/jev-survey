@@ -8,3 +8,5 @@
 *.fls
 src/main_v05.pdf
 .DS_Store
+src/main_kdd.pdf
+!src/main_kdd.bbl

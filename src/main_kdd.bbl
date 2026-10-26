@@ -1,0 +1,443 @@
+\begin{thebibliography}{10}
+
+\bibitem{angelopoulos2021gentle}
+A.~N. Angelopoulos and S.~Bates.
+\newblock Conformal prediction: A gentle introduction.
+\newblock {\em Foundations and Trends in Machine Learning}, 16(4):494--591,
+  2023.
+
+\bibitem{angelopoulos2024conformal}
+A.~N. Angelopoulos, S.~Bates, A.~Fisch, L.~Lei, and T.~Schuster.
+\newblock Conformal risk control.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2024.
+
+\bibitem{awesomejev2026decisions}
+{Awesome-Jev contributors}.
+\newblock Decisions, not tokens: A survey of typed, calibrated, and
+  machine-native decision models from classical classifiers to {Jev}.
+\newblock \url{https://github.com/youzizzz1028/Awesome-Jev}, 2026.
+
+\bibitem{azizi2026one}
+S.~Azizi, E.~{Baghaei Potraghloo}, and M.~Pedram.
+\newblock One word opens the gate: The option-channel attack on typed decision
+  models as agent guardrails.
+\newblock {\em arXiv preprint arXiv:2610.12292}, 2026.
+
+\bibitem{bespoke2026nimble}
+{Bespoke Labs} and M.~Sathiamoorthy.
+\newblock {Nimble}.
+\newblock \url{https://github.com/bespokelabsai/nimble}, 2026.
+
+\bibitem{chen2026routing}
+E.~Chen, S.~Wang, K.~S. Chan, S.~Wang, and C.~G. Brinton.
+\newblock Routing without training: Controllable-ratio {LLM} offloading via
+  reliability gating.
+\newblock {\em arXiv preprint arXiv:2607.20481}, 2026.
+
+\bibitem{chen2023frugalgpt}
+L.~Chen, M.~Zaharia, and J.~Zou.
+\newblock {FrugalGPT}: How to use large language models while reducing cost and
+  improving performance.
+\newblock {\em Transactions on Machine Learning Research}, 2024.
+
+\bibitem{debenedetti2025defeating}
+E.~Debenedetti, I.~Shumailov, T.~Fan, J.~Hayes, N.~Carlini, D.~Fabian, C.~Kern,
+  C.~Shi, A.~Terzis, and F.~Tram{\`e}r.
+\newblock Defeating prompt injections by design.
+\newblock {\em arXiv preprint arXiv:2503.18813}, 2025.
+
+\bibitem{deusser2026evaluating}
+T.~Deu{\ss}er, L.~Sparrenberg, and R.~Sifa.
+\newblock Evaluating and benchmarking the system one model {Jev}.
+\newblock {\em arXiv preprint arXiv:2609.37647}, 2026.
+
+\bibitem{feng2024graphrouter}
+T.~Feng, Y.~Shen, and J.~You.
+\newblock {GraphRouter}: A graph-based router for {LLM} selections.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2025.
+
+\bibitem{geifman2017selective}
+Y.~Geifman and R.~El-Yaniv.
+\newblock Selective classification for deep neural networks.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  2017.
+
+\bibitem{gu2024survey}
+J.~Gu, X.~Jiang, Z.~Shi, H.~Tan, X.~Zhai, C.~Xu, W.~Li, Y.~Shen, S.~Ma, H.~Liu,
+  S.~Wang, K.~Zhang, Z.~Lin, B.~Zhang, L.~Ni, W.~Gao, Y.~Wang, and J.~Guo.
+\newblock A survey on {LLM}-as-a-judge.
+\newblock {\em The Innovation}, 7(6):101253, 2026.
+
+\bibitem{guo2017calibration}
+C.~Guo, G.~Pleiss, Y.~Sun, and K.~Q. Weinberger.
+\newblock On calibration of modern neural networks.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning (ICML)}, 2017.
+
+\bibitem{guo2026just}
+R.~Guo, Y.~Liu, G.~Deng, Y.~Li, L.~Zhao, Y.~Wu, S.~Chen, Y.~Zhang, and L.~Y.
+  Zhang.
+\newblock Just ask {Jev}: Reinforcement learning for calibrated decisions as a
+  zero-shot detector of {AI} alignment failures.
+\newblock {\em arXiv preprint arXiv:2609.29429}, 2026.
+
+\bibitem{hanley1983nothing}
+J.~A. Hanley and A.~Lippman-Hand.
+\newblock If nothing goes wrong, is everything all right? {I}nterpreting zero
+  numerators.
+\newblock {\em JAMA}, 249(13):1743--1745, 1983.
+
+\bibitem{hoover2025dynaguard}
+M.~Hoover, V.~Baherwani, N.~Jain, K.~Saifullah, J.~J. Vincent, C.~Jain, M.~Rad,
+  C.~Bruss, A.~Panda, and T.~Goldstein.
+\newblock {DynaGuard}: A dynamic guardian model with user-defined policies.
+\newblock In {\em International Conference on Learning Representations}, pages
+  87822--87859, 2026.
+
+\bibitem{hu2026jevadvbench}
+J.~Hu, H.~Zhang, Y.~Liu, Y.~Zeng, L.~Zeng, X.~Wang, R.~Wang, and L.~Y. Zhang.
+\newblock {JevAdvBench}: A benchmark and black-box attacks for reinforcement
+  learning for calibrated decisions models.
+\newblock {\em arXiv preprint arXiv:2609.31142}, 2026.
+
+\bibitem{ibrahim2026evaluating}
+H.~Ibrahim and Y.~Zaki.
+\newblock Evaluating decision models for text annotation in computational
+  social science.
+\newblock {\em arXiv preprint arXiv:2609.24574}, 2026.
+
+\bibitem{inan2023llama}
+H.~Inan, K.~Upasani, J.~Chi, R.~Rungta, et~al.
+\newblock Llama guard: {LLM}-based input-output safeguard for human-{AI}
+  conversations.
+\newblock {\em arXiv preprint arXiv:2312.06674}, 2023.
+
+\bibitem{iqbal2026typed}
+A.~R. Iqbal, M.~F. Nasim, and A.~Saleem.
+\newblock Typed decision models under prevalence shift: Decision training,
+  calibration, and implicit priors.
+\newblock {\em arXiv preprint arXiv:2610.26325}, 2026.
+
+\bibitem{jitkrittum2025universal}
+W.~Jitkrittum, H.~Narasimhan, A.~S. Rawat, J.~Juneja, C.~Wang, Z.~Wang, A.~Go,
+  C.-Y. Lee, P.~Shenoy, R.~Panigrahy, A.~K. Menon, and S.~Kumar.
+\newblock Universal model routing for efficient {LLM} inference.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2026.
+
+\bibitem{jung2025trust}
+J.~Jung, F.~Brahman, and Y.~Choi.
+\newblock Trust or escalate: {LLM} judges with provable guarantees for human
+  agreement.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2025.
+
+\bibitem{kadavath2022language}
+S.~Kadavath, T.~Conerly, A.~Askell, T.~Henighan, et~al.
+\newblock Language models (mostly) know what they know.
+\newblock {\em arXiv preprint arXiv:2207.05221}, 2022.
+
+\bibitem{kahneman2011thinking}
+D.~Kahneman.
+\newblock {\em Thinking, Fast and Slow}.
+\newblock Farrar, Straus and Giroux, New York, NY, USA, 2011.
+
+\bibitem{kim2024prometheus2}
+S.~Kim, J.~Suk, S.~Longpre, B.~Y. Lin, J.~Shin, S.~Welleck, et~al.
+\newblock Prometheus 2: An open source language model specialized in evaluating
+  other language models.
+\newblock In {\em Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing (EMNLP)}, 2024.
+
+\bibitem{lee2026semif}
+T.~Lee.
+\newblock {SemIf} (formerly {OpenJev}): Semantic ifs from open models.
+\newblock \url{https://github.com/TheoLeeCJ/SemIf-OpenJev}, 2026.
+
+\bibitem{li2026llmrouterbench}
+H.~Li, Y.~Zhang, Z.~Guo, C.~Wang, S.~Tang, Q.~Zhang, Y.~Chen, B.~Qi, P.~Ye,
+  L.~Bai, Z.~Wang, and S.~Hu.
+\newblock {LLMR}outer{B}ench: A massive benchmark and unified framework for
+  {LLM} routing.
+\newblock In {\em Findings of the {A}ssociation for {C}omputational
+  {L}inguistics: {ACL} 2026}, pages 37733--37754. Association for Computational
+  Linguistics, 2026.
+
+\bibitem{arxiv2026beyond}
+K.~Li, Y.~He, and Q.~Li.
+\newblock Beyond calibration: Do a typed-decision model's probabilities obey
+  the probability axioms?
+\newblock {\em arXiv preprint arXiv:2609.33209}, 2026.
+
+\bibitem{li2026same}
+X.~Li, A.~Huang, M.~Zhang, and Z.~Liu.
+\newblock Same attack, different judge: A first controlled adversarial
+  comparison of {Jev}, {LLM} judges, and purpose-built safety classifiers.
+\newblock {\em arXiv preprint arXiv:2610.17820}, 2026.
+
+\bibitem{li2025rethinking}
+Y.~Li.
+\newblock Rethinking predictive modeling for {LLM} routing: When simple {kNN}
+  beats complex learned routers.
+\newblock {\em arXiv preprint arXiv:2505.12601}, 2025.
+
+\bibitem{li2026reading}
+Y.~Li, R.~Krishnan, and R.~Padman.
+\newblock Reading right, acting wrong: Diagnosing decision failures of system
+  one models in agent loops.
+\newblock {\em arXiv preprint arXiv:2610.18579}, 2026.
+
+\bibitem{li2026jev}
+Y.~Li, Y.~Miao, R.~Krishnan, and R.~Padman.
+\newblock {JEV}-as-a-judge: Accept when confident, escalate when unsure.
+\newblock {\em arXiv preprint arXiv:2609.26550}, 2026.
+
+\bibitem{ling2026faster}
+Y.~Ling, S.~Yu, Z.~Chen, and C.~Fang.
+\newblock When faster decisions do not make better agents: An empirical study
+  of {Jev} in agent workflows.
+\newblock {\em arXiv preprint arXiv:2610.13092}, 2026.
+
+\bibitem{liu2026evaluating}
+Y.~Liu.
+\newblock Evaluating system one models for agent security decisions:
+  Reliability, calibration, and selective automation.
+\newblock {\em arXiv preprint arXiv:2609.33401}, 2026.
+
+\bibitem{liu2023geval}
+Y.~Liu, D.~Iter, Y.~Xu, S.~Wang, et~al.
+\newblock {G-Eval}: {NLG} evaluation using {GPT-4} with better human alignment.
+\newblock In {\em Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing (EMNLP)}, 2023.
+
+\bibitem{luo2026jev}
+M.~Luo.
+\newblock Jev and typed decision models: An empirical survey of calibration,
+  selective control, and open implementations.
+\newblock \url{https://github.com/Eurekaleo/awesome-jev-survey}, 2026.
+
+\bibitem{mapika2026decider}
+M.~Marosi.
+\newblock decider: One-pass typed decisions with calibrated probabilities.
+\newblock \url{https://github.com/Mapika/decider}, 2026.
+
+\bibitem{moslem2026dynamic}
+Y.~Moslem and J.~D. Kelleher.
+\newblock Dynamic model routing and cascading for efficient {LLM} inference: A
+  survey.
+\newblock {\em Transactions on Machine Learning Research}, 2026.
+
+\bibitem{convai2026laya}
+{Nandakishor}.
+\newblock {Laya}: Non-autoregressive system 1 decision engine.
+\newblock \url{https://github.com/NandhaKishorM/laya}, 2026.
+
+\bibitem{ong2024routellm}
+I.~Ong, A.~Almahairi, V.~Wu, W.-L. Chiang, T.~Wu, J.~E. Gonzalez, M.~W. Kadous,
+  and I.~Stoica.
+\newblock {RouteLLM}: Learning to route {LLMs} from preference data.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2025.
+
+\bibitem{openai2026decisions}
+{OpenAI}.
+\newblock {DevDay 2026 Recap}.
+\newblock \url{https://openai.com/index/devday-2026-recap/}, Sept. 2026.
+
+\bibitem{ovadia2019can}
+Y.~Ovadia, E.~Fertig, J.~Ren, Z.~Nado, D.~Sculley, S.~Nowozin, J.~V. Dillon,
+  B.~Lakshminarayanan, and J.~Snoek.
+\newblock Can you trust your model's uncertainty? {E}valuating predictive
+  uncertainty under dataset shift.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  2019.
+
+\bibitem{palmer2026kev}
+J.~Palmer.
+\newblock {Kev}: Small {Jev}-like decision models you can train and run
+  yourself.
+\newblock \url{https://github.com/jaredpalmer/kev}, 2026.
+
+\bibitem{perifanis2026selmroute}
+V.~Perifanis, N.~Pavlidis, and S.~Symeonidis.
+\newblock {SeLMRoute}: Probabilistic semantic evidence for large language model
+  routing.
+\newblock {\em arXiv preprint arXiv:2609.34736}, 2026.
+
+\bibitem{rajput2026hosted}
+D.~Rajput, N.~Chauhan, and S.~Kosaraju.
+\newblock Does a hosted decision model respect irrelevant alternatives? {A}
+  pre-registered test of option-set dependence in {Jev}.
+\newblock {\em arXiv preprint arXiv:2610.16655}, 2026.
+
+\bibitem{rao2026jev}
+D.~Rao and C.~Callison-Burch.
+\newblock {JEV} vs.\ {LLMs} as rubric judges: Cheaper, faster, and wrong in the
+  same places.
+\newblock {\em arXiv preprint arXiv:2609.29769}, 2026.
+
+\bibitem{rishirajfs2026jevrouter}
+{rishirajFS}.
+\newblock jev-router: Outcome-based evaluation of {Jev} as a cost-aware {LLM}
+  router, on ground-truth benchmarks with three {Claude} tiers.
+\newblock \url{https://github.com/rishirajFS/jev-router}, 2026.
+
+\bibitem{scienthoon2026calibration}
+{scienthoon}.
+\newblock Does {Jev} know when it doesn't know? {C}alibration of {TypeSafe}'s
+  {Jev} on an unseen rule-based task.
+\newblock \url{https://github.com/scienthoon/jev-ood-calibration}, 2026.
+
+\bibitem{jevbench2026v1422}
+F.~Standhartinger.
+\newblock {JevBench}: A benchmark for {Jev}-class decision models, v1.4.2.2
+  results.
+\newblock
+  \url{https://github.com/fstandhartinger/jevbench/blob/main/results/v1.4.2.2/jevbench-v1.4.2.2-results.json},
+  2026.
+
+\bibitem{stepanov2025gliclass}
+I.~Stepanov, M.~Shtopko, D.~Vodianytskyi, O.~Lukashov, A.~Yavorskyi, and
+  M.~Yaroshenko.
+\newblock {GLiClass}: Generalist lightweight model for sequence classification
+  tasks.
+\newblock {\em arXiv preprint arXiv:2508.07662}, 2025.
+
+\bibitem{sui2025stop}
+Y.~Sui, Y.-N. Chuang, G.~Wang, J.~Zhang, T.~Zhang, J.~Yuan, H.~Liu, A.~Wen,
+  S.~Zhong, N.~Zou, et~al.
+\newblock Stop overthinking: A survey on efficient reasoning for large language
+  models.
+\newblock {\em arXiv preprint arXiv:2503.16419}, 2025.
+
+\bibitem{sun2026type}
+Y.~Sun, J.~Xu, J.~Shi, and Z.~Yang.
+\newblock Type-safe is not error-free: A constrained decision head follows the
+  option name, not the rubric bound to it.
+\newblock {\em arXiv preprint arXiv:2609.26758}, 2026.
+
+\bibitem{tang2026typed}
+L.~Tang and Y.~Zheng.
+\newblock Typed decision models: An early evidence audit and evaluation
+  checklist.
+\newblock {\em arXiv preprint arXiv:2609.32160}, 2026.
+
+\bibitem{tokentrim2026jevrouting}
+{TokenTrim}.
+\newblock jev-routing-experiment.
+\newblock \url{https://github.com/TokenTrim/jev-routing-experiment}, 2026.
+
+\bibitem{tran2025arch}
+C.~Tran, S.~Paracha, A.~Hafeez, and S.~Chen.
+\newblock {Arch-Router}: Aligning {LLM} routing with human preferences.
+\newblock {\em arXiv preprint arXiv:2506.16655}, 2025.
+
+\bibitem{tunstall2022efficient}
+L.~Tunstall, N.~Reimers, U.~E.~S. Jo, L.~Bates, D.~Korat, M.~Wasserblat, et~al.
+\newblock Efficient few-shot learning without prompts.
+\newblock {\em arXiv preprint arXiv:2209.11055}, 2022.
+
+\bibitem{typesafe2026docs}
+{TypeSafe AI}.
+\newblock {TypeSafe AI} documentation.
+\newblock \url{https://docs.typesafe.ai}, 2026.
+
+\bibitem{varangotreille2025doing}
+C.~Varangot-Reille, C.~Bouvard, M.~Ciancone, A.~Gourru, M.~Schaeffer, and
+  F.~Jacquenet.
+\newblock Doing more with less: A survey on routing strategies for resource
+  optimisation in large language model-based systems.
+\newblock {\em Journal of Artificial Intelligence Research}, 86, 2026.
+
+\bibitem{vats2026good}
+N.~Vats.
+\newblock Good judgment, bad advice: Decision-model controllers raise agent
+  cost without improving success.
+\newblock {\em arXiv preprint arXiv:2610.24649}, 2026.
+
+\bibitem{warner2024smarter}
+B.~Warner, A.~Chaffin, B.~Clavi{\'e}, O.~Weller, O.~Hallstr{\"o}m,
+  S.~Taghadouini, A.~Gallagher, R.~Biswas, F.~Ladhak, T.~Aarsen, G.~T. Adams,
+  J.~Howard, and I.~Poli.
+\newblock Smarter, better, faster, longer: A modern bidirectional encoder for
+  fast, memory efficient, and long context finetuning and inference.
+\newblock In {\em Proceedings of the 63rd Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 2526--2547.
+  Association for Computational Linguistics, 2025.
+
+\bibitem{willard2023efficient}
+B.~T. Willard and R.~Louf.
+\newblock Efficient guided generation for large language models.
+\newblock {\em arXiv preprint arXiv:2307.09702}, 2023.
+
+\bibitem{wu2026decision}
+T.~Wu and W.~Y.~B. Lim.
+\newblock Decision hijacking: Prompt injection attacks on {Jev}'s typed
+  probabilistic decisions.
+\newblock {\em arXiv preprint arXiv:2609.28613}, 2026.
+
+\bibitem{wu2026reflex}
+T.~Wu and W.~Y.~B. Lim.
+\newblock {REFLEX} with {Jev} for efficient selective control in {LLM} agents.
+\newblock {\em arXiv preprint arXiv:2609.26532}, 2026.
+
+\bibitem{xu2026jevout}
+Z.~Xu.
+\newblock {JevOut}: Natural context can flip decision models.
+\newblock {\em arXiv preprint arXiv:2609.30243}, 2026.
+
+\bibitem{yang2026toward}
+X.~Yang, L.~Li, H.~Zhou, T.~Zhu, X.~Qu, et~al.
+\newblock Toward efficient agents: Memory, tool learning, and planning.
+\newblock {\em arXiv preprint arXiv:2601.14192}, 2026.
+
+\bibitem{yin2019benchmarking}
+W.~Yin, J.~Hay, and D.~Roth.
+\newblock Benchmarking zero-shot text classification: Datasets, evaluation and
+  entailment approach.
+\newblock In {\em Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing and the International Joint Conference on Natural
+  Language Processing (EMNLP-IJCNLP)}, 2019.
+
+\bibitem{yue2024large}
+M.~Yue, J.~Zhao, M.~Zhang, L.~Du, and Z.~Yao.
+\newblock Large language model cascades with mixture of thoughts
+  representations for cost-efficient reasoning.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2024.
+
+\bibitem{zhang2025router}
+H.~Zhang, T.~Feng, and J.~You.
+\newblock {Router-R1}: Teaching {LLMs} multi-round routing and aggregation via
+  reinforcement learning.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  2025.
+
+\bibitem{nokia2026anyjev}
+J.~Zhang, T.~Yang, Y.~Shi, E.~Chen, Z.~Nie, K.~Wan, L.~Hong, N.~Liu, and L.~Wu.
+\newblock {AnyJev} technical report.
+\newblock {\em arXiv preprint arXiv:2610.00831}, 2026.
+
+\bibitem{zhao2021calibrate}
+T.~Z. Zhao, E.~Wallace, S.~Feng, D.~Klein, and S.~Singh.
+\newblock Calibrate before use: Improving few-shot performance of language
+  models.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning (ICML)}, 2021.
+
+\bibitem{zheng2024large}
+C.~Zheng, H.~Zhou, F.~Meng, J.~Zhou, and M.~Huang.
+\newblock Large language models are not robust multiple choice selectors.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2024.
+
+\bibitem{zhou2024batch}
+H.~Zhou, X.~Wan, L.~Proleev, D.~Mincu, J.~Chen, K.~Heller, and S.~Roy.
+\newblock Batch calibration: Rethinking calibration for in-context learning and
+  prompt engineering.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2024.
+
+\end{thebibliography}

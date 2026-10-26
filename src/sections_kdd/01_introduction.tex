@@ -1,6 +1,6 @@
 \section{Introduction}
 \label{sec:intro}
-\input{figures_v05/fig_radar}
+\input{figures_kdd/fig_radar}
 
 As LLM systems take on tasks that involve several steps, they need to decide how to proceed as well as generate responses. An agent may need to choose which tool to call next and when to stop~\cite{yang2026toward}. The surrounding system may also choose which model should handle a request~\cite{varangotreille2025doing} or whether a proposed action is risky~\cite{liu2026evaluating}. Many of these decisions involve a known set of answers. For the software taking the next step, a choice among those answers can be more useful than an explanation, especially if it comes with a probability that helps determine whether to act or seek further review.
 
@@ -19,6 +19,6 @@ Earlier research provides a starting point for this comparison. Typed decision i
 \item \textbf{Evidence and practical guidance.} We bring together independent evaluations to explain where these models are useful and what deployment risks remain. We then give practitioners a procedure for comparing alternatives on their own tasks (Sections~\ref{sec:evidence}--\ref{sec:guidance}).
 \end{enumerate}
 
-\noindent\textbf{Scope and sources.} To connect the recent Jev literature with this earlier work, we searched arXiv, GitHub and official documentation for public sources through September 30, 2026. We combined a name for Jev or its interface (Jev, System One model, typed decision model, decision model) with a term for one surveyed family (LLM routing, cascades, zero-shot classification, policy-conditioned guards, rubric judges, label-token readout, calibration), then followed citations from the works found.
+\noindent\textbf{Scope and sources.} To connect the recent Jev literature with this earlier work, we searched arXiv, GitHub and official documentation for public sources through September 30, 2026\rev{, and cite a few later studies where they bear directly on a finding}. We combined a name for Jev or its interface (Jev, System One model, typed decision model, decision model) with a term for one surveyed family (LLM routing, cascades, zero-shot classification, policy-conditioned guards, rubric judges, label-token readout, calibration), then followed citations from the works found.
 
 Because most work specific to typed decision models appeared in the preceding two weeks as preprints or repositories, the evidence is still developing. At this moment, Jev has no technical report yet, so our description follows TypeSafe's documentation~\cite{typesafe2026docs}. We distinguish documented interface properties from empirical findings and identify results supported by a single study. We call a study \emph{independent} when its authors neither developed nor funded the system it measures, and attribute results to the researchers who measured them.

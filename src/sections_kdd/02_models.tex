@@ -42,6 +42,6 @@ Software acts on a decision through an \emph{acceptance rule} that the caller se
 
 \subsection{Implementations}
 \label{sec:implementations}
-\input{tables_v05/tab_implementations}
+\input{tables_kdd/tab_implementations}
 
 Beyond Jev, open implementations fall into three families (Table~\ref{tab:implementations}): 1) trained encoder heads, such as Laya, which fine-tunes ModernBERT-class encoders~\cite{convai2026laya,warner2024smarter}; 2) fine-tuned decoders, such as Kev, Nimble and trained Decider variants, which adapt open decoder models~\cite{palmer2026kev,bespoke2026nimble,mapika2026decider}; and 3) readout from frozen open models, such as SemIf, AnyJev and stock-weight Decider variants~\cite{lee2026semif,nokia2026anyjev,mapika2026decider}. Laya, Kev, Nimble and Decider expose endpoints modeled on TypeSafe's request format~\cite{convai2026laya,palmer2026kev,bespoke2026nimble,mapika2026decider}, although supported inputs and confidence fields differ. Compatibility does not establish equivalent decision behavior. Most calibration claims for the open implementations also come from their own developers.

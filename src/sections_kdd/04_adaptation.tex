@@ -7,7 +7,7 @@ A deployed decision component serves a pool of candidate models, a set of decisi
 
 \noindent\textbf{A sequence of changes.} Consider a support service that classifies tickets and routes difficult cases to an LLM. Adding a ticket category is a new decision: the team writes its definition and checks it on a small set of labeled tickets, while the shared model stays frozen. Adding an LLM is a new model: the team records its outputs on a reference set and supplies the resulting profile. Lowering the offload ratio is a new constraint: the team picks a new threshold from representative warmup scores. Tightening the permitted error rate is also a new constraint, but it needs a risk-control procedure. The team may reuse its existing labeled set if the traffic, the question text and the model version have not changed since the set was labeled.
 
-\input{tables_v05/tab_requirements}
+\input{tables_kdd/tab_requirements}
 
 \noindent\textbf{What each family needs.} Table~\ref{tab:requirements} lists what a change on each axis requires, family by family. Typed decision models accept a new decision as question text, without changing the shared model. Testing the new decision still takes labeled examples. The other two axes need further information. In the routing approaches reviewed here, a new candidate model needs candidate-specific evidence, such as a profile (Section~\ref{sec:routing}). An offload ratio needs representative unlabeled scores. A risk target needs a validated acceptance rule and labeled evidence.
 

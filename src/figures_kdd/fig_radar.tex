@@ -1,5 +1,6 @@
 \begin{figure}[t]
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[font=\scriptsize, line join=round]
   \def\R{2.05}
   \colorlet{seriesTyped}{seriesTypedc}
@@ -48,7 +49,8 @@
   \node[legsample, right=10pt of T2] (L3) {};
   \draw[mutedc, line width=0.9pt, dashed] (L3.west) -- (L3.east); \fill[mutedc] ([shift={(-1.5pt,-1.3pt)}]L3.center) -- ++(3pt,0) -- ++(-1.5pt,2.8pt) -- cycle;
   \node[right=2pt of L3, inner sep=1pt] (T3) {OpenDecision};
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \caption{Scores of four systems on JevBench v1.4.2.2~\cite{jevbench2026v1422}, from three classes: a typed decision model (Jev 1.13.0), two prompted LLMs (GPT-6 Luna at low reasoning effort and Gemini 3.1 Flash-Lite) and a zero-shot ModernBERT classifier (OpenDecision). Each axis is the benchmark's 0--100 score on the same decisions. Intelligence is chance-corrected accuracy across the benchmark's tiers, calibration measures how well stated probabilities match outcomes, speed maps latency to a score (100 at 0.1\,s, 80 at 1\,s), and cost maps the price per 1{,}000 decisions to a score, so that higher means cheaper. OpenDecision's speed and cost are the benchmark's estimates rather than measurements. The results file reports no uncertainty estimates. On this snapshot, no system is best on every axis. Against Gemini 3.1 Flash-Lite, the typed decision model scores 1.4 points lower on intelligence and higher on the other three axes. The speed scale is logarithmic: Jev's median latency is 0.65\,s, against 1.44\,s for GPT-6 Luna at low effort. We chose one system per class to compare the classes, not to rank systems. Three open-weight typed models rank above Jev on the benchmark's composite score.}
 \label{fig:radar}
 \end{figure}
